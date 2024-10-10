@@ -1,30 +1,48 @@
 pipeline {
-    agent {
-		docker
-			{
-				image: 'ubuntu:latest'
-				}
-			}
-	
+    agent any // Run on any available agent
+
     stages {
-        stage('Build') {
+        stage('Clone repository') {
             steps {
-                sh 'echo "Hello World"'
-                sh '''
-                    echo "Multiline shell steps works too"
-                    ls -lah
-                '''
-            }
-}
-	stage('Deploy') {
-            steps {
-                sh 'echo "Hello World"'
-                sh '''
-                    echo "Multiline shell steps works too"
-                    ls -lah
-                '''
+                // Checkout code from Git repository
+                git url: 'https://github.com/samsysengg/groovygit.git'
             }
         }
-    
-}
+
+        stage('Build') {
+            steps {
+                // Build the project
+                echo 'Building the project...'
+
+            }
+        }
+
+        stage('Test') {
+            steps {
+                // Run tests
+                echo 'Running tests...'
+
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                // Deploy the project
+                echo 'Deploying the project...'
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'Cleaning up workspace...'
+            cleanWs()
+        }
+        success {
+            echo 'Pipeline completed successfully!'
+        }
+        failure {
+            echo 'Pipeline failed. Please check the logs.'
+        }
+    }
 }
