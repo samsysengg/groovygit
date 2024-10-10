@@ -15,7 +15,7 @@ pipeline {
                     ls -lah
                 '''
             }
-		stage('Deploy') {
+	stage('Deploy') {
             steps {
                 sh 'echo "Hello World"'
                 sh '''
@@ -25,4 +25,5 @@ pipeline {
             }
         }
     }
+}
 }
