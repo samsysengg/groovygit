@@ -1,4 +1,4 @@
-@library('customlib@main') _
+@Library('customlib@main') _
 node
 {
   test('naan dhan da ungoppan pesuren')
