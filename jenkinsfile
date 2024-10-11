@@ -1,5 +1,8 @@
-@Library('customlib@main') _
-node
-{
-  test('naan dhan da ungoppan pesuren')
+@Library('customlib') _
+
+node {
+    // Call the function from the vars/myLibrary.groovy
+    def greeting = customlib.greet('senthil')
+    echo greeting
+    
 }
