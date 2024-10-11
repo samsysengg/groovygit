@@ -1,4 +1,4 @@
-@Library('customlib') _
+@Library('customlib@main') _
 
 node {
     // Call the function from the vars/myLibrary.groovy
