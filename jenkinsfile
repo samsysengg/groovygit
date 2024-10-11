@@ -1,5 +1,5 @@
-@library('customlib@main')_
-node any
+@library('customlib@main') _
+node
 {
-test('naan dhan da ungoppan pesuren')
+  test('naan dhan da ungoppan pesuren')
 }
