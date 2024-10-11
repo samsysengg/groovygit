@@ -2,7 +2,7 @@
 
 node {
     // Call the function from the vars/myLibrary.groovy
-    def greeting = customlib.greet('senthil')
+    def greeting = test.greet('senthil')
     echo greeting
     
 }
